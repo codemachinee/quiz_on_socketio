@@ -13,7 +13,7 @@ from src.all_riddles import riddles
 # Заставляем работать пути к статике
 static_files = {'/': 'static/index.html', '/static': './static'}
 sio = socketio.AsyncServer(async_mode='asgi', cors_allowed_origins="*")
-app = FastAPI
+app = FastAPI()
 socket_app = socketio.ASGIApp(sio, app, static_files)
 
 # настройки логирования
